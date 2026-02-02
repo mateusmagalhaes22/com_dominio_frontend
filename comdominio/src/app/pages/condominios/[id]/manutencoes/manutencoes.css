@@ -1,0 +1,335 @@
+/* Maintenances Page Styles */
+.maintenances-container {
+    padding: 24px;
+    background-color: #f9fafb;
+    min-height: 100vh;
+}
+
+.maintenances-header {
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.maintenances-header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.maintenances-back-button {
+    padding: 8px 16px;
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.maintenances-back-button:hover {
+    background-color: #1976d2;
+}
+
+.maintenances-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+}
+
+.maintenances-subtitle {
+    font-size: 16px;
+    color: #666;
+    margin: 4px 0 0 0;
+}
+
+.maintenances-add-button {
+    padding: 10px 20px;
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.maintenances-add-button:hover {
+    background-color: #1976d2;
+}
+
+.maintenances-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.maintenance-card {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease-in-out;
+}
+
+.maintenance-card:hover {
+    border-color: #2196f3;
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.15);
+    transform: translateY(-1px);
+}
+
+.maintenance-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.maintenance-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+}
+
+.maintenance-info {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.maintenance-info-strong {
+    font-weight: 600;
+}
+
+.maintenance-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+
+.maintenance-buttons {
+    display: flex;
+    gap: 8px;
+    margin-right: 16px;
+}
+
+.maintenance-complete-button {
+    padding: 6px 12px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.maintenance-complete-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.maintenance-complete-button:hover:not(:disabled) {
+    background-color: #388e3c;
+}
+
+.maintenance-delete-button {
+    padding: 6px 12px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.maintenance-delete-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.maintenance-delete-button:hover:not(:disabled) {
+    background-color: #d32f2f;
+}
+
+.maintenance-status {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    color: white;
+}
+
+.maintenance-status.pending {
+    background-color: #ffd900;
+}
+
+.maintenance-status.completed {
+    background-color: #1a9641;
+}
+
+.maintenance-status.overdue {
+    background-color: #f32121;
+}
+
+.maintenances-empty {
+    background-color: white;
+    padding: 32px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+}
+
+.maintenances-empty-text {
+    color: #666;
+    font-size: 16px;
+    margin: 0;
+}
+
+.maintenances-loading {
+    padding: 24px;
+    background-color: #f9fafb;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.maintenances-loading-text {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Maintenance Card Styles */
+.maintenance-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    gap: 16px;
+}
+
+.maintenance-info-section {
+    flex: 1;
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+    margin-right: 5%;
+}
+
+.maintenance-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+}
+
+.maintenance-date-item {
+    color: #666;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.maintenance-description {
+    margin: 0;
+    color: #666;
+    line-height: 1.5;
+    word-break: break-word;
+    padding-top: 12px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.maintenance-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.maintenance-action-btn {
+    padding: 6px 12px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: background-color 0.15s ease-in-out;
+    margin-bottom: 10px;
+}
+
+.maintenance-complete-btn {
+    background-color: #4caf50;
+}
+
+.maintenance-complete-btn:hover:not(.disabled) {
+    background-color: #388e3c;
+}
+
+.maintenance-delete-btn {
+    background-color: #f44336;
+}
+
+.maintenance-delete-btn:hover:not(.disabled) {
+    background-color: #d32f2f;
+}
+
+.maintenance-action-btn.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.maintenance-status-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    color: white;
+}
+
+.maintenance-recurring {
+    color: #2196f3 !important;
+    font-weight: 600;
+}
+
+.maintenance-next-recurrence {
+    color: #ff9800 !important;
+    font-weight: 600;
+    background-color: #fff3e0;
+    padding: 6px 8px;
+    border-radius: 4px;
+    border-left: 3px solid #ff9800;
+    margin-left: 5%;
+}
+
+.maintenance-recurring-section {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #2196f3;
+    font-weight: 600;
+}

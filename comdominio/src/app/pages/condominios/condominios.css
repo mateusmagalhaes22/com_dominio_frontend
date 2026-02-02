@@ -1,0 +1,161 @@
+/* Condominios Page Styles */
+.condominios-container {
+    padding: 24px;
+    background-color: #f9fafb;
+    min-height: 100vh;
+}
+
+.condominios-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.condominios-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+}
+
+.condominios-add-button {
+    padding: 12px 24px;
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: 0 2px 4px rgba(33, 150, 243, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.condominios-add-button:hover {
+    background-color: #1976d2;
+}
+
+.condominios-grid {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.condominio-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    width: 320px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    background-color: white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.condominio-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.condominio-card-content {
+    position: relative;
+    padding: 16px;
+}
+
+.condominio-delete-button {
+    position: absolute;
+    right: 8px;
+    background-color: #c52222;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    width: 85px;
+    height: 28px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    opacity: 1;
+    transition: all 0.2s ease;
+}
+
+.condominio-delete-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.condominio-delete-button:hover:not(:disabled) {
+    background-color: #dd3333;
+    transform: scale(1.1);
+}
+
+.condominio-name {
+    margin: 0 0 12px 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+}
+
+.condominio-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.condominio-info-item {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.condominio-info-strong {
+    font-weight: 600;
+}
+
+.condominio-stats {
+    background-color: #f5f5f5;
+    padding: 12px 16px;
+    margin-top: auto;
+}
+
+.condominio-maintenance-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background-color: #22c55e;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: left;
+}
+
+.condominio-maintenance-buttons.pending {
+    background-color: #e9da07;
+}
+
+.condominio-maintenance-buttons.overdue {
+    background-color: #c52222;
+}
+
+.condominios-empty {
+    background-color: white;
+    padding: 32px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+}
+
+.condominios-empty-text {
+    color: #666;
+    font-size: 16px;
+}

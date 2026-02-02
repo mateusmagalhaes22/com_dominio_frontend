@@ -1,0 +1,140 @@
+/* Home Page Styles */
+.home-container {
+    padding: 24px;
+}
+
+.home-header {
+    margin-bottom: 32px;
+}
+
+.home-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.home-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+@media (min-width: 768px) {
+    .home-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .home-stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.home-actions-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+@media (min-width: 1024px) {
+    .home-actions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.home-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    border: 1px solid #e5e7eb;
+    padding: 24px;
+}
+
+.home-card-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 16px;
+}
+
+.home-actions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.home-action-button {
+    width: 100%;
+    text-align: left;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.home-action-button:hover {
+    background-color: #f9fafb;
+}
+
+.home-action-content {
+    display: flex;
+    align-items: center;
+}
+
+.home-action-icon {
+    margin-right: 12px;
+    font-size: 20px;
+}
+
+.home-action-icon.blue {
+    color: #2563eb;
+}
+
+.home-action-icon.green {
+    color: #16a34a;
+}
+
+.home-action-icon.purple {
+    color: #9333ea;
+}
+
+.home-action-text {
+    font-weight: 500;
+    color: #111827;
+}
+
+.home-activities-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.home-activity-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.home-activity-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.home-activity-text {
+    font-size: 14px;
+    color: #111827;
+}
+
+.home-activity-highlight {
+    font-weight: 500;
+}
+
+.home-activity-time {
+    font-size: 12px;
+    color: #6b7280;
+}
