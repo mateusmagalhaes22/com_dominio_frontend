@@ -30,6 +30,15 @@ interface Condominium {
     address: string;
 }
 
+interface MaintenancePayload {
+    name: string;
+    description: string;
+    status: string;
+    endDate: string;
+    isRecurring: boolean;
+    recurringPeriod?: string;
+}
+
 export default function MaintenancesPage() {
     const router = useRouter();
     const params = useParams();
@@ -118,7 +127,7 @@ export default function MaintenancesPage() {
 
         try {
             // Preparar dados, removendo recurringPeriod se isRecurring for false
-            const dataToSend: any = {
+            const dataToSend: MaintenancePayload = {
                 name: formData.name,
                 description: formData.description,
                 status: formData.status,
@@ -267,7 +276,7 @@ export default function MaintenancesPage() {
 
         try {
             // Preparar dados, removendo recurringPeriod se isRecurring for false
-            const dataToSend: any = {
+            const dataToSend: MaintenancePayload = {
                 name: formData.name,
                 description: formData.description,
                 status: formData.status,
@@ -322,7 +331,7 @@ export default function MaintenancesPage() {
                         if (errorJson.message) {
                             errorMessage += `\nDetalhes: ${errorJson.message}`;
                         }
-                    } catch (parseError) {
+                    } catch {
                         if (errorText) {
                             errorMessage += `\nDetalhes: ${errorText}`;
                         }

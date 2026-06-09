@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import StatCard from '../../../components/StatCard';
 import ReportModal from '../../../components/ReportModal';
@@ -47,7 +47,7 @@ export default function HomePage() {
     setIsReportModalOpen(true);
   };
 
-  const loadActivities = async () => {
+  const loadActivities = useCallback(async () => {
     try {
       const workspaceId = localStorage.getItem('workspaceId');
       const token = localStorage.getItem('token');
@@ -72,7 +72,7 @@ export default function HomePage() {
     } catch (error) {
       console.error('Erro ao buscar atividades:', error);
     }
-  };
+  }, [baseUrl]);
 
   useEffect(() => {
     const loadDashboardData = async () => {
@@ -129,7 +129,7 @@ export default function HomePage() {
 
     loadDashboardData();
     loadActivities();
-  }, [baseUrl]);
+  }, [loadActivities, baseUrl]);
 
   const getActivityIcon = (type: string) => {
     const iconColor = getActivityColor(type);

@@ -1,7 +1,7 @@
 'use client';
 
 import React from "react";
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import AddCondominiumModal from '../../../components/AddCondominiumModal';
 import { generateIdempotencyKeySync } from '../../../utils/idempotency';
 import AddIcon from '@mui/icons-material/Add';
@@ -21,7 +21,6 @@ interface Condominium {
 
 export default function ComdominiumsPage() {
     const router = useRouter();
-    const searchParams = useSearchParams();
     const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080';
 
     const [condominiums, setCondominiums] = React.useState<Condominium[]>([]);
@@ -172,7 +171,8 @@ export default function ComdominiumsPage() {
 
     // Detecta se deve abrir o modal automaticamente baseado no parâmetro da URL
     React.useEffect(() => {
-        const openModal = searchParams.get('openModal');
+        const params = new URLSearchParams(window.location.search);
+        const openModal = params.get('openModal');
         if (openModal === 'true') {
             setIsModalOpen(true);
             // Remove o parâmetro da URL após abrir o modal
@@ -180,7 +180,7 @@ export default function ComdominiumsPage() {
             url.searchParams.delete('openModal');
             window.history.replaceState({}, '', url.toString());
         }
-    }, [searchParams]);
+    }, []);
 
     if (isLoadingData) {
         return (
