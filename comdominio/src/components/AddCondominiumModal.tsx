@@ -74,7 +74,6 @@ export default function AddCondominiumModal({ isOpen, onClose, onSubmit, loading
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         
-        // Aplicar formatação específica para cada campo
         if (name === 'cnpj') {
             const formattedCNPJ = formatCNPJ(value);
             setFormData(prev => ({
@@ -115,6 +114,17 @@ export default function AddCondominiumModal({ isOpen, onClose, onSubmit, loading
                 setErrors(prev => ({
                     ...prev,
                     name: 'Já existe um condomínio com este nome'
+                }));
+            }
+        }
+        if (name === 'cnpj' && value.trim()) {
+            const duplicateCNPJ = existingCondominiums.find(
+                condominium => condominium.cnpj === value.trim()
+            );
+            if (duplicateCNPJ) {
+                setErrors(prev => ({
+                    ...prev,
+                    cnpj: 'Já existe um condomínio com este CNPJ'
                 }));
             }
         }

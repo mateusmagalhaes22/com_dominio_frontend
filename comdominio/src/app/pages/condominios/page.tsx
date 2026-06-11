@@ -39,14 +39,13 @@ export default function ComdominiumsPage() {
     };
 
     const handleAddCondominium = async (formData: {name: string, cnpj: string, address: string, units: number, phone?: string}) => {
-        const existingCondominium = condominiums.find(
+        const existingCondominiumName = condominiums.find(
             condominium => condominium.name.toLowerCase() === formData.name.toLowerCase()
         );
         
-        if (existingCondominium) {
-            alert('Já existe um condomínio com este nome. Por favor, escolha um nome diferente.');
-            return;
-        }
+        const existingCondominiumCNPJ = condominiums.find(
+            condominium => condominium.cnpj === formData.cnpj
+        );
 
         setLoading(true);
         
