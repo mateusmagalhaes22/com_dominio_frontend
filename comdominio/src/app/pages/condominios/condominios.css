@@ -102,6 +102,11 @@
     font-size: 20px;
     font-weight: 700;
     color: #000;
+    display: inline-block;
+    max-width: 80%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .condominio-info {
